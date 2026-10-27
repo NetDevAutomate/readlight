@@ -4,6 +4,9 @@ import assert from "node:assert/strict";
 import { PROVIDER_IDS, getProvider, listProviders, normalizeBaseFor, isLoopbackHost, openvoxVoiceRecord } from "../lib/tts-providers.js";
 import { DEFAULTS, resolveConnection, connectionKeys, connectionWarning } from "../lib/settings.js";
 
+// A placeholder API key for request-shape tests; not a credential.
+const DUMMY_KEY = "k3y"; // pragma: allowlist secret
+
 test("isLoopbackHost: 127.0.0.0/8, ::1 (bare or bracketed) and localhost only", () => {
   for (const h of ["127.0.0.1", "127.255.0.9", "::1", "[::1]", "localhost", "LOCALHOST"]) {
     assert.equal(isLoopbackHost(h), true, h);
@@ -14,15 +17,15 @@ test("isLoopbackHost: 127.0.0.0/8, ::1 (bare or bracketed) and localhost only", 
 });
 
 test("connectionWarning: only a key sent over plain http to a non-loopback host warns", () => {
-  assert.match(connectionWarning({ base: "http://nas:3000/api/v1", apiKey: "k3y" }), /http/i);
-  assert.match(connectionWarning({ base: "http://10.0.0.5:3000/api/v1", apiKey: "k3y" }), /http/i);
-  assert.equal(connectionWarning({ base: "https://nas:3000/api/v1", apiKey: "k3y" }), "");
-  assert.equal(connectionWarning({ base: "http://127.0.0.1:3000/api/v1", apiKey: "k3y" }), "");
-  assert.equal(connectionWarning({ base: "http://[::1]:3000/api/v1", apiKey: "k3y" }), "");
-  assert.equal(connectionWarning({ base: "http://localhost:3000/api/v1", apiKey: "k3y" }), "");
+  assert.match(connectionWarning({ base: "http://nas:3000/api/v1", apiKey: DUMMY_KEY }), /http/i);
+  assert.match(connectionWarning({ base: "http://10.0.0.5:3000/api/v1", apiKey: DUMMY_KEY }), /http/i);
+  assert.equal(connectionWarning({ base: "https://nas:3000/api/v1", apiKey: DUMMY_KEY }), "");
+  assert.equal(connectionWarning({ base: "http://127.0.0.1:3000/api/v1", apiKey: DUMMY_KEY }), "");
+  assert.equal(connectionWarning({ base: "http://[::1]:3000/api/v1", apiKey: DUMMY_KEY }), "");
+  assert.equal(connectionWarning({ base: "http://localhost:3000/api/v1", apiKey: DUMMY_KEY }), "");
   assert.equal(connectionWarning({ base: "http://nas:3000/api/v1", apiKey: "" }), "");
-  assert.equal(connectionWarning({ base: "http://nas:3000/api/v1", apiKey: "   " }), "");
-  assert.equal(connectionWarning({ base: "not a url", apiKey: "k3y" }), "");
+  assert.equal(connectionWarning({ base: "http://nas:3000/api/v1", apiKey: " ".repeat(3) }), "");
+  assert.equal(connectionWarning({ base: "not a url", apiKey: DUMMY_KEY }), "");
   assert.equal(connectionWarning(undefined), "");
 });
 
@@ -72,17 +75,17 @@ test("resolveConnection: legacy flat 1.0.x settings resolve to OpenVox unchanged
 
 test("resolveConnection: kokoro-web reads its own keys and the local secret", () => {
   const s = { ...DEFAULTS, provider: "kokoro-web", kokoroBase: "http://nas:3000/api/v1", kokoroVoice: "af_bella*0.5+af_heart*0.5" };
-  const c = resolveConnection(s, { kokoroApiKey: "k3y" });
+  const c = resolveConnection(s, { kokoroApiKey: DUMMY_KEY });
   assert.equal(c.id, "kokoro-web");
   assert.equal(c.base, "http://nas:3000/api/v1");
   assert.equal(c.model, "model_q8f16");
   assert.equal(c.language, "en-us");
   assert.equal(c.voice, "af_bella*0.5+af_heart*0.5");
-  assert.equal(c.apiKey, "k3y");
+  assert.equal(c.apiKey, DUMMY_KEY);
 });
 
 test("resolveConnection: the api key never leaks into an OpenVox connection", () => {
-  const c = resolveConnection({ ...DEFAULTS }, { kokoroApiKey: "k3y" });
+  const c = resolveConnection({ ...DEFAULTS }, { kokoroApiKey: DUMMY_KEY });
   assert.equal(c.apiKey, "");
 });
 

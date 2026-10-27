@@ -18,9 +18,12 @@ repos:
       - id: detect-private-key
       - id: detect-aws-credentials
         args: [--allow-missing-credentials]
+      # .gitignore's macOS "Icon\r\r" entry must keep its two carriage returns to match the file.
       - id: trailing-whitespace
+        exclude: ^\.gitignore$
       - id: mixed-line-ending
         args: [--fix=lf]
+        exclude: ^\.gitignore$
       - id: check-merge-conflict
 
   - repo: https://github.com/astral-sh/ruff-pre-commit

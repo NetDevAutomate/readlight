@@ -21,6 +21,9 @@ import {
 } from "../lib/kokoro-client.js";
 import { TtsError } from "../lib/tts-error.js";
 
+// A placeholder API key for request-shape tests; not a credential.
+const DUMMY_KEY = "k3y"; // pragma: allowlist secret
+
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fixture = (name) => JSON.parse(readFileSync(path.join(here, "fixtures/kokoro", name), "utf8"));
 
@@ -80,7 +83,7 @@ test("authHeaders adds a bearer token only when a key is present", () => {
 });
 
 test("requestInit refuses redirects so the bearer key never follows one", () => {
-  const withKey = requestInit({ method: "POST", body: { a: 1 }, accept: "audio/wav", apiKey: "k3y" });
+  const withKey = requestInit({ method: "POST", body: { a: 1 }, accept: "audio/wav", apiKey: DUMMY_KEY });
   assert.equal(withKey.redirect, "error");
   assert.equal(withKey.headers.Authorization, "Bearer k3y");
   assert.equal(withKey.headers["Content-Type"], "application/json");
