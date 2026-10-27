@@ -1,0 +1,74 @@
+# Fast, file-scoped hygiene runs on every commit; the slow, whole-project
+# checks (type-check + tests + coverage) run on pre-push so commits stay quick.
+default_install_hook_types: [pre-commit, pre-push]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=1000]
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-toml
+      - id: check-yaml
+        args: [--unsafe]
+      - id: end-of-file-fixer
+      - id: debug-statements
+      - id: detect-private-key
+      - id: detect-aws-credentials
+        args: [--allow-missing-credentials]
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-merge-conflict
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.20
+    hooks:
+      - id: ruff-check
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ["--baseline", ".secrets.baseline"]
+        exclude: ".*\\.lock$"
+
+  - repo: local
+    hooks:
+      # Whole-project checks: deferred to pre-push to keep commits fast.
+      # types:[python] keeps them inert in non-Python repos.
+      - id: pyright
+        name: pyright
+        entry: uv run pyright
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [pre-push]
+
+      - id: pytest
+        name: pytest
+        entry: uv run pytest --cov-fail-under=90
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [pre-push]
+
+      - id: check-commit-author
+        name: Check commit author is Andy Taylor
+        entry: >-
+          bash -c 'author=$(git config user.name);
+          email=$(git config user.email);
+          if [ "$author" != "Andy Taylor" ] ||
+          [ "$email" != "andy.taylor@mail.com" ]; then
+          echo "ERROR: Commit author must be Andy Taylor <andy.taylor@mail.com>";
+          echo "Current: $author <$email>";
+          echo "Fix: git config user.name \"Andy Taylor\" && git config user.email andy.taylor@mail.com";
+          exit 1; fi'
+        language: system
+        always_run: true
+        pass_filenames: false
+        stages: [pre-commit]

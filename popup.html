@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font: 13px/1.4 -apple-system, system-ui, sans-serif;
+        width: 260px;
+        margin: 0;
+        padding: 12px;
+        color: #222;
+      }
+      h1 {
+        font-size: 13px;
+        margin: 0 0 10px;
+      }
+      .row {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 6px;
+      }
+      button {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #f7f7f7;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      button.primary {
+        background: #0a84ff;
+        color: #fff;
+        border-color: #0a84ff;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: default;
+      }
+      .status {
+        margin-top: 8px;
+        padding: 6px 8px;
+        border-radius: 6px;
+        background: #f0f0f0;
+        min-height: 16px;
+      }
+      .status.error {
+        background: #ffe5e5;
+        color: #a00;
+      }
+      .bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 8px;
+      }
+      .muted {
+        color: #888;
+        font-size: 11px;
+      }
+      a {
+        color: #0a84ff;
+        text-decoration: none;
+      }
+      .speed {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 6px;
+      }
+      .speed label {
+        flex: 0 0 auto;
+        font-weight: 600;
+      }
+      .speed select {
+        flex: 1;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+        font-size: 13px;
+      }
+      .hint {
+        margin-top: 6px;
+        color: #888;
+        font-size: 11px;
+        line-height: 1.35;
+      }
+      kbd {
+        font: 10px/1 ui-monospace, Menlo, monospace;
+        padding: 1px 4px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+        border-radius: 3px;
+        background: #fafafa;
+      }
+      .consent h2 {
+        font-size: 13px;
+        margin: 0 0 6px;
+      }
+      .consent p {
+        margin: 0 0 8px;
+      }
+      .consent .devices {
+        border: 0;
+        margin: 0 0 8px;
+        padding: 0;
+      }
+      .consent .devices legend {
+        font-weight: 600;
+        padding: 0;
+        margin-bottom: 2px;
+      }
+      .consent .devices label {
+        display: block;
+        margin: 2px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🔊 OpenVox Read Aloud</h1>
+    <div id="controls">
+      <div class="row"><button id="read-page" class="primary">▶ Read page</button></div>
+      <div class="row"><button id="read-region">🎯 Read a region…</button></div>
+      <div class="row"><button id="read-selection">▶ Read selection</button></div>
+      <div class="row">
+        <button id="prev" aria-label="Previous sentence" title="Previous sentence">⏮</button>
+        <button id="playpause" aria-label="Pause or resume" title="Pause / Resume">⏸ Pause</button>
+        <button id="next" aria-label="Next sentence" title="Next sentence">⏭</button>
+      </div>
+      <div class="row">
+        <button id="reread" aria-label="Re-read this sentence" title="Re-read this sentence">↺ Again</button>
+        <button id="stop">⏹ Stop</button>
+      </div>
+      <div class="speed">
+        <label for="speed">Speed</label>
+        <select id="speed" aria-label="Reading speed"></select>
+      </div>
+    </div>
+    <!-- Shown instead of #controls when the service worker reports "needs-consent". -->
+    <section id="consent" class="consent" role="group" aria-labelledby="consent-title" hidden>
+      <h2 id="consent-title" tabindex="-1">Download the voice model?</h2>
+      <p id="consent-body"></p>
+      <fieldset class="devices">
+        <legend>Run it on</legend>
+        <label><input type="radio" name="consent-device" value="auto" /> Automatic <span class="muted" id="consent-auto-size"></span></label>
+        <label><input type="radio" name="consent-device" value="webgpu" /> GPU <span class="muted">326 MB, fastest</span></label>
+        <label><input type="radio" name="consent-device" value="wasm" /> CPU <span class="muted">92 MB, slower</span></label>
+      </fieldset>
+      <div class="row">
+        <button id="consent-accept" class="primary">Download and read</button>
+        <button id="consent-decline">Not now</button>
+      </div>
+    </section>
+    <div id="status" class="status" role="status" aria-live="polite">Idle.</div>
+    <div class="bar">
+      <span class="muted" id="meta"></span>
+      <a href="#" id="open-options">Settings</a>
+    </div>
+    <div class="hint" id="hint"></div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

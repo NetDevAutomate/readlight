@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- OpenVox Read Aloud — 16px toolbar variant (hand-tuned for pixel legibility). -->
+  <rect x="0.5" y="0.5" width="15" height="15" rx="4" fill="#2563eb"/>
+  <!-- page -->
+  <rect x="3" y="2.5" width="8" height="11" rx="1.5" fill="#ffffff"/>
+  <rect x="4.5" y="4.5" width="5" height="1.5" rx="0.75" fill="#1e3a8a" opacity="0.35"/>
+  <!-- highlighted line -->
+  <rect x="4" y="7.25" width="6" height="2.5" rx="1.25" fill="#ffd60a"/>
+  <rect x="4.5" y="10.5" width="4" height="1.5" rx="0.75" fill="#1e3a8a" opacity="0.35"/>
+  <!-- speaker badge -->
+  <circle cx="11.75" cy="11.5" r="3.75" fill="#ffd60a"/>
+  <path d="M9.9 10.6 L9.9 12.4 L10.9 12.4 L12.1 13.5 L12.1 9.5 L10.9 10.6 Z" fill="#1e3a8a"/>
+  <path d="M13 10.4 Q13.9 11.5 13 12.6" fill="none" stroke="#1e3a8a" stroke-width="0.9" stroke-linecap="round"/>
+</svg>

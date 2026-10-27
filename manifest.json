@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "OpenVox Read Aloud",
+  "version": "1.0.0",
+  "description": "Read the current page, a region, or your selection aloud with a private in-browser voice (or your own OpenVox / Kokoro server). Sentence highlighting, speed control, code-block aware.",
+  "minimum_chrome_version": "116",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["storage", "offscreen", "activeTab", "scripting"],
+  "host_permissions": [
+    "http://127.0.0.1:8005/*",
+    "https://huggingface.co/*",
+    "https://*.huggingface.co/*",
+    "https://*.hf.co/*"
+  ],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "OpenVox Read Aloud",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "options_page": "options.html",
+  "commands": {
+    "toggle-play": {
+      "suggested_key": { "default": "Alt+Shift+P" },
+      "description": "Pause / resume reading (starts reading the page when idle)"
+    },
+    "next-sentence": {
+      "suggested_key": { "default": "Alt+Shift+Period" },
+      "description": "Next sentence"
+    },
+    "prev-sentence": {
+      "suggested_key": { "default": "Alt+Shift+Comma" },
+      "description": "Previous sentence"
+    },
+    "reread-sentence": {
+      "suggested_key": { "default": "Alt+Shift+R" },
+      "description": "Re-read the current sentence"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  },
+  "cross_origin_embedder_policy": { "value": "require-corp" },
+  "cross_origin_opener_policy": { "value": "same-origin" }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "openvox-read-aloud",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "description": "Chrome MV3 extension: read a page, region or selection aloud with a built-in in-browser voice (Kokoro on WebGPU/WASM), or via a local OpenVox / Kokoro Web server, with sentence highlighting, speed control and code-block aware reading.",
+  "scripts": {
+    "build": "node scripts/build-vendor.mjs",
+    "test": "node --test",
+    "test:live": "OPENVOX_LIVE=1 node --test",
+    "validate": "node scripts/validate-package.mjs",
+    "icons": "scripts/gen-icons.sh",
+    "preflight": "npm run build && npm test && npm run validate",
+    "package": "node scripts/package.mjs"
+  },
+  "devDependencies": {
+    "@huggingface/transformers": "3.8.1",
+    "esbuild": "0.28.2",
+    "kokoro-js": "1.2.1"
+  }
+}

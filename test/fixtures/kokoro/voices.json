@@ -1,0 +1,585 @@
+[
+    {
+        "id": "af_heart",
+        "name": "Heart",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "A",
+        "overallGrade": "A"
+    },
+    {
+        "id": "af_alloy",
+        "name": "Alloy",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "af_aoede",
+        "name": "Aoede",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C+"
+    },
+    {
+        "id": "af_bella",
+        "name": "Bella",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "A",
+        "overallGrade": "A-"
+    },
+    {
+        "id": "af_jessica",
+        "name": "Jessica",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "af_kore",
+        "name": "Kore",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C+"
+    },
+    {
+        "id": "af_nicole",
+        "name": "Nicole",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "B-"
+    },
+    {
+        "id": "af_nova",
+        "name": "Nova",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "af_river",
+        "name": "River",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "af_sarah",
+        "name": "Sarah",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C+"
+    },
+    {
+        "id": "af_sky",
+        "name": "Sky",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C-"
+    },
+    {
+        "id": "am_adam",
+        "name": "Adam",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Male",
+        "targetQuality": "D",
+        "overallGrade": "F+"
+    },
+    {
+        "id": "am_echo",
+        "name": "Echo",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "am_eric",
+        "name": "Eric",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "am_fenrir",
+        "name": "Fenrir",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Male",
+        "targetQuality": "B",
+        "overallGrade": "C+"
+    },
+    {
+        "id": "am_liam",
+        "name": "Liam",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "am_michael",
+        "name": "Michael",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Male",
+        "targetQuality": "B",
+        "overallGrade": "C+"
+    },
+    {
+        "id": "am_onyx",
+        "name": "Onyx",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "am_puck",
+        "name": "Puck",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Male",
+        "targetQuality": "B",
+        "overallGrade": "C+"
+    },
+    {
+        "id": "am_santa",
+        "name": "Santa",
+        "lang": {
+            "id": "en-us",
+            "name": "English (US)"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D-"
+    },
+    {
+        "id": "bf_emma",
+        "name": "Emma",
+        "lang": {
+            "id": "en-gb",
+            "name": "English (UK)"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "B-"
+    },
+    {
+        "id": "bf_isabella",
+        "name": "Isabella",
+        "lang": {
+            "id": "en-gb",
+            "name": "English (UK)"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "bm_george",
+        "name": "George",
+        "lang": {
+            "id": "en-gb",
+            "name": "English (UK)"
+        },
+        "gender": "Male",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "bm_lewis",
+        "name": "Lewis",
+        "lang": {
+            "id": "en-gb",
+            "name": "English (UK)"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D+"
+    },
+    {
+        "id": "bf_alice",
+        "name": "Alice",
+        "lang": {
+            "id": "en-gb",
+            "name": "English (UK)"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "bf_lily",
+        "name": "Lily",
+        "lang": {
+            "id": "en-gb",
+            "name": "English (UK)"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "bm_daniel",
+        "name": "Daniel",
+        "lang": {
+            "id": "en-gb",
+            "name": "English (UK)"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "bm_fable",
+        "name": "Fable",
+        "lang": {
+            "id": "en-gb",
+            "name": "English (UK)"
+        },
+        "gender": "Male",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "ef_dora",
+        "name": "Dora",
+        "lang": {
+            "id": "es-419",
+            "name": "Spanish"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "em_alex",
+        "name": "Alex",
+        "lang": {
+            "id": "es-419",
+            "name": "Spanish"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "em_santa",
+        "name": "Santa",
+        "lang": {
+            "id": "es-419",
+            "name": "Spanish"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "jf_alpha",
+        "name": "Alpha",
+        "lang": {
+            "id": "ja",
+            "name": "Japanese"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C+"
+    },
+    {
+        "id": "jf_gongitsune",
+        "name": "Gongitsune",
+        "lang": {
+            "id": "ja",
+            "name": "Japanese"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "jf_nezumi",
+        "name": "Nezumi",
+        "lang": {
+            "id": "ja",
+            "name": "Japanese"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C-"
+    },
+    {
+        "id": "jf_tebukuro",
+        "name": "Tebukuro",
+        "lang": {
+            "id": "ja",
+            "name": "Japanese"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "jm_kumo",
+        "name": "Kumo",
+        "lang": {
+            "id": "ja",
+            "name": "Japanese"
+        },
+        "gender": "Male",
+        "targetQuality": "B",
+        "overallGrade": "C-"
+    },
+    {
+        "id": "zf_xiaobei",
+        "name": "Xiaobei",
+        "lang": {
+            "id": "cmn",
+            "name": "Chinese"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "zf_xiaoni",
+        "name": "Xiaoni",
+        "lang": {
+            "id": "cmn",
+            "name": "Chinese"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "zf_xiaoxiao",
+        "name": "Xiaoxiao",
+        "lang": {
+            "id": "cmn",
+            "name": "Chinese"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "zf_xiaoyi",
+        "name": "Xiaoyi",
+        "lang": {
+            "id": "cmn",
+            "name": "Chinese"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "zm_yunjian",
+        "name": "Yunjian",
+        "lang": {
+            "id": "cmn",
+            "name": "Chinese"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "zm_yunxi",
+        "name": "Yunxi",
+        "lang": {
+            "id": "cmn",
+            "name": "Chinese"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "zm_yunxia",
+        "name": "Yunxia",
+        "lang": {
+            "id": "cmn",
+            "name": "Chinese"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "zm_yunyang",
+        "name": "Yunyang",
+        "lang": {
+            "id": "cmn",
+            "name": "Chinese"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "hf_alpha",
+        "name": "Alpha",
+        "lang": {
+            "id": "hi",
+            "name": "Hindi"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "hf_beta",
+        "name": "Beta",
+        "lang": {
+            "id": "hi",
+            "name": "Hindi"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "hm_omega",
+        "name": "Omega",
+        "lang": {
+            "id": "hi",
+            "name": "Hindi"
+        },
+        "gender": "Male",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "hm_psi",
+        "name": "Psi",
+        "lang": {
+            "id": "hi",
+            "name": "Hindi"
+        },
+        "gender": "Male",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "if_sara",
+        "name": "Sara",
+        "lang": {
+            "id": "it",
+            "name": "Italian"
+        },
+        "gender": "Female",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "im_nicola",
+        "name": "Nicola",
+        "lang": {
+            "id": "it",
+            "name": "Italian"
+        },
+        "gender": "Male",
+        "targetQuality": "B",
+        "overallGrade": "C"
+    },
+    {
+        "id": "pf_dora",
+        "name": "Dora",
+        "lang": {
+            "id": "pt-br",
+            "name": "Portuguese (Brazil)"
+        },
+        "gender": "Female",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "pm_alex",
+        "name": "Alex",
+        "lang": {
+            "id": "pt-br",
+            "name": "Portuguese (Brazil)"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    },
+    {
+        "id": "pm_santa",
+        "name": "Santa",
+        "lang": {
+            "id": "pt-br",
+            "name": "Portuguese (Brazil)"
+        },
+        "gender": "Male",
+        "targetQuality": "C",
+        "overallGrade": "D"
+    }
+]
