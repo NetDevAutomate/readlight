@@ -1,6 +1,6 @@
-# OpenVox Read Aloud
+# Readlight
 
-A free, open-source Chrome (Manifest V3) extension that reads the **current page**, a **region you point at**, or your **highlighted selection** aloud — and highlights the sentence it's currently speaking, in a colour you choose (or no highlight at all).
+A free, open-source browser extension (Manifest V3; Chromium-based browsers such as Chrome, Edge and Brave, Firefox planned) that reads the **current page**, a **region you point at**, or your **highlighted selection** aloud — and highlights the sentence it's currently speaking, in a colour you choose (or no highlight at all).
 
 Speech comes from one of three providers you pick in Settings:
 
@@ -34,7 +34,7 @@ curl http://127.0.0.1:8005/v1/models
 2. Open `chrome://extensions`.
 3. Toggle **Developer mode** (top-right).
 4. Click **Load unpacked** and select this folder (`openvox`).
-5. Pin the **🔊 OpenVox Read Aloud** icon to the toolbar.
+5. Pin the **🔊 Readlight** icon to the toolbar.
 
 > Tabs that were already open *before* you installed the extension are handled automatically — the service worker injects the content script on demand. If a page still doesn't respond, reload it once.
 
@@ -262,7 +262,7 @@ npm run preflight     # build + tests + package validation
 - Keep the README and architecture diagram in sync with code changes.
 - Bump `version` in both `manifest.json` and `package.json` (a test enforces parity).
 
-Packaging: `npm run package` writes `dist/openvox-read-aloud-<version>.zip` from the committed tree plus the built `vendor/` (run `npm run build` first; uncommitted edits are not included). `npm run validate` checks the zip's file list covers everything the manifest loads.
+Packaging: `npm run package` writes `dist/readlight-<version>.zip` from the committed tree plus the built `vendor/` (run `npm run build` first; uncommitted edits are not included). `npm run validate` checks the zip's file list covers everything the manifest loads.
 
 ---
 

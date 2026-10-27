@@ -42,7 +42,7 @@ function main() {
 
   const { version } = JSON.parse(readFileSync(path.join(root, "manifest.json"), "utf8"));
   const outDir = path.join(root, "dist");
-  const zip = path.join(outDir, `openvox-read-aloud-${version}.zip`);
+  const zip = path.join(outDir, `readlight-${version}.zip`);
   mkdirSync(outDir, { recursive: true });
   rmSync(zip, { force: true });
   execFileSync("git", ["archive", "--format=zip", "-o", zip, "HEAD", "--", ...PACKAGE_ENTRIES], { cwd: root, stdio: "inherit" });

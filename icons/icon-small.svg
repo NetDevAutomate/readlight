@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-  <!-- OpenVox Read Aloud — 16px toolbar variant (hand-tuned for pixel legibility). -->
+  <!-- Readlight — 16px toolbar variant (hand-tuned for pixel legibility). -->
   <rect x="0.5" y="0.5" width="15" height="15" rx="4" fill="#2563eb"/>
   <!-- page -->
   <rect x="3" y="2.5" width="8" height="11" rx="1.5" fill="#ffffff"/>

@@ -88,7 +88,7 @@ function popupError(message) {
 
 const FILE_URL_HELP =
   "Chrome blocks extensions on local files until you allow it: open chrome://extensions, " +
-  "click Details on OpenVox Read Aloud, and turn on “Allow access to file URLs”.";
+  "click Details on Readlight, and turn on “Allow access to file URLs”.";
 
 // Resolve the active tab and make sure the content script is present. Returns the tab,
 // or null after reporting the reason to the popup.

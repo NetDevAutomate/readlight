@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "OpenVox Read Aloud",
+  "name": "Readlight",
   "version": "1.0.0",
   "description": "Read the current page, a region, or your selection aloud with a private in-browser voice (or your own OpenVox / Kokoro server). Sentence highlighting, speed control, code-block aware.",
   "minimum_chrome_version": "116",
@@ -24,7 +24,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "OpenVox Read Aloud",
+    "default_title": "Readlight",
     "default_icon": {
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png",

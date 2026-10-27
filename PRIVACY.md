@@ -1,8 +1,8 @@
-# Privacy Policy — OpenVox Read Aloud
+# Privacy Policy — Readlight
 
-_Last updated: 2026-10-26_
+_Last updated: 2026-10-27_
 
-OpenVox Read Aloud is a free, open-source browser extension that reads web pages aloud using either a text-to-speech (TTS) voice that runs **inside your browser**, or a TTS server you control. It has no accounts, no analytics, no advertising, and no servers of its own.
+Readlight is a free, open-source browser extension that reads web pages aloud using either a text-to-speech (TTS) voice that runs **inside your browser**, or a TTS server you control. It has no accounts, no analytics, no advertising, and no servers of its own.
 
 ## What the extension processes
 
