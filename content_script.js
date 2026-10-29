@@ -548,9 +548,11 @@
   function findPaneCandidate(el) {
     if (!el || el === document.documentElement || el === document.body) return el;
 
+    const LANDMARK = "main, article, [role='main'], section, .content, #content, aside";
     let current = el;
     let best = el;
     let bestScore = scoreElement(el) || textLength(el) || 1;
+    let bestIsLandmark = !!el.matches?.(LANDMARK);
 
     // Walk up a bounded number of levels looking for a better pane
     for (let i = 0; i < 6 && current.parentElement; i++) {
@@ -560,15 +562,27 @@
       const score = scoreElement(current) || textLength(current) || 1;
       const rect = current.getBoundingClientRect();
       const area = Math.max(0, rect.width * rect.height);
+      const isLandmark = !!current.matches?.(LANDMARK);
+      const muchMoreText = score > bestScore * 1.6;
 
-      const isSemantic =
-        current.matches?.("main, article, [role='main'], section, .content, #content, aside") ||
-        (current.tagName === "DIV" && current.children.length >= 2);
+      if (bestIsLandmark) {
+        // Once a landmark holds the text, don't climb to the page's layout grid: on a
+        // three-column page the wrapper's paragraph score equals the article's (sidebars add
+        // no <p>) and its area is always large, so without this the picker never offers the
+        // article alone. Only a landmark that adds substantially more text replaces it.
+        if (isLandmark && muchMoreText) {
+          best = current;
+          bestScore = score;
+        }
+        continue;
+      }
 
+      const isGroup = isLandmark || (current.tagName === "DIV" && current.children.length >= 2);
       // Prefer semantic containers with real content, or elements that are much larger
-      if ((isSemantic && score > 150) || score > bestScore * 1.6 || area > 90000) {
+      if ((isGroup && score > 150) || muchMoreText || area > 90000) {
         best = current;
         bestScore = score;
+        bestIsLandmark = isLandmark;
       }
     }
     return best;
